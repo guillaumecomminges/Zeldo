@@ -13,7 +13,9 @@
 
 			private void Update()
 			{
-				m_rigidbody.velocity = new Vector3(Mathf.Lerp(0, Input.GetAxisRaw("Horizontal")* m_speed, 0.5f),
-                                                Mathf.Lerp(0, Input.GetAxisRaw("Vertical")* m_speed, 0.5f));	
+				if(!transform.gameObject.GetComponent<Entity>().IsDead()){
+					m_rigidbody.velocity = new Vector3(Mathf.Lerp(0, Input.GetAxisRaw("Horizontal")* m_speed, 0.5f),
+													Mathf.Lerp(0, Input.GetAxisRaw("Vertical")* m_speed, 0.5f));	
+				}
 			}
 	}

@@ -15,4 +15,4 @@ MonoBehaviour:
   m_Text: "Niahaha Je suis m\xE9chant"
   m_Nom: Le michant
   m_SpeakerAvatar: {fileID: 21300000, guid: 38b0c5bd6442fe6419d9a889eca0d1bb, type: 3}
-  nextDialog: 0
+  m_nextDialog: {fileID: 11400000, guid: 7698709c26972bc44bc6a33d626b5cbc, type: 2}

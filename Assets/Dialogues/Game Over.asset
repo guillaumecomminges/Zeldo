@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d18cda3d8d391947aa29d183abc8e70, type: 3}
-  m_Name: Dialog01_rep2
+  m_Name: Game Over
   m_EditorClassIdentifier: 
-  m_Text: "Ohoho que c'est gentil, ils viennent d'une grotte situ\xE9e au nord"
-  m_Nom: L'ermite
-  m_SpeakerAvatar: {fileID: 21300000, guid: ccdde498b48bd2b42bbfd2ec55b556f7, type: 3}
+  m_Text: Game Over
+  m_Nom: Thierry
+  m_SpeakerAvatar: {fileID: 21300010, guid: 61f826147b12dc1418971363544ed127, type: 3}
   m_nextDialog: {fileID: 0}
