@@ -24,12 +24,11 @@ public class Entity : MonoBehaviour
 	public void TakeDamage(int _damage, Transform _entityPos, bool _isPlayer)
 	{
 		m_life -= _damage;
-        Debug.Log("Life :" + m_life);
         if(m_life > 0)
         {
             if(_isPlayer)
             {
-            KnockBackPlayer(_entityPos.position);
+                KnockBackPlayer(_entityPos.position);
             }else{
                 KnockBack(_entityPos.position);
             }
@@ -50,8 +49,8 @@ public class Entity : MonoBehaviour
 
     public void KnockBackPlayer(Vector3 _entityPos)
     {
-        Vector3 knockbackPosition = transform.position + (transform.position - _entityPos).normalized *100 ;
-        gameObject.GetComponent<Rigidbody2D>().position = Vector2.MoveTowards(transform.position, knockbackPosition, 100 * Time.deltaTime); 
+        Vector3 knockbackPosition = (_entityPos - transform.position).normalized * 100;
+        gameObject.GetComponent<Rigidbody2D>().AddForce(-knockbackPosition * 40);
     }
 
     public string GetName()

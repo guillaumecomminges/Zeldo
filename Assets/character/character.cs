@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+ using System.Collections;
 public class character : MonoBehaviour
 {
 	private Animator m_Animator = null;
@@ -23,6 +24,8 @@ public class character : MonoBehaviour
 
 	private bool m_fini = false;
 
+	float life;
+	public GUIStyle myGUIStyle;
 
 	private void Awake()
 	{
@@ -113,11 +116,26 @@ public class character : MonoBehaviour
 				Invoke("GameOver", 0.5f);
 				m_fini = true;
 			}
+		
+		
 		}
+		life = transform.gameObject.GetComponentInParent<Entity>().GetLife();
+		if(life <= 0){
+			life = 0;
+		}
+		
 	}
 
 	private void GameOver()
 	{
 		m_dialogBox.DisplayDialog(m_gmeOver);
 	}
+
+	private void OnGUI () {
+ 
+	//For example you have 100 life’s maximum.
+	
+	GUI.Box(new Rect(10f, 10f, 0.001f * Screen.width * life,  0.1f * Screen.height), "LIFE : " +  life, myGUIStyle);
+ 
+ }
 }
