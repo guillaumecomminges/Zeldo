@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Victory : MonoBehaviour
 {
@@ -19,5 +20,11 @@ public class Victory : MonoBehaviour
 	private void VictoryClaim()
 	{
 		m_dialogBox.DisplayDialog(m_winMessage);
+		ReturnToMenu();
+	}
+
+	private void ReturnToMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 }
