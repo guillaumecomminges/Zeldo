@@ -5,16 +5,14 @@ using UnityEngine;
 public class MapManager : MonoBehaviour {
 
     [SerializeField]
-    Collider2D colliderHouseIn;
+    Transform Spawn = null; 
     [SerializeField]
-    Transform HouseSpawn;
-    [SerializeField]
-    Transform playerPosition;
+    Transform playerPosition = null;
 
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
         if (collider2D.GetComponent<Rigidbody2D>()) {
-			playerPosition.transform.position = HouseSpawn.transform.position;
+			playerPosition.transform.position = Spawn.transform.position;
 		}
     }
 }

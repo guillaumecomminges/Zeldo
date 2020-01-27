@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-	//[AddComponentMenu("Scripts/IADetectPlayer")]
 	public class IADetectPlayer : StateMachineBehaviour
 	{
 

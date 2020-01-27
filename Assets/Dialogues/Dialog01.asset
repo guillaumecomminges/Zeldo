@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d18cda3d8d391947aa29d183abc8e70, type: 3}
   m_Name: Dialog01
   m_EditorClassIdentifier: 
-  m_Text: Hola aventurier, j'ai perdu mon marteau...
-  m_Nom: Le Vieux
+  m_Text: "Bonjour jeune homme, pourriez vous m'aider ? des cr\xE9atures viennent
+    sacager mes plantes r\xE9guli\xE8rement..."
+  m_Nom: L'ermite
   m_SpeakerAvatar: {fileID: 21300010, guid: ccdde498b48bd2b42bbfd2ec55b556f7, type: 3}
+  m_nextDialog: {fileID: 11400000, guid: bca264c1e55f62646986cff441cc8d20, type: 2}

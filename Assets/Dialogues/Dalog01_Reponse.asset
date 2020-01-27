@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d18cda3d8d391947aa29d183abc8e70, type: 3}
   m_Name: Dalog01_Reponse
   m_EditorClassIdentifier: 
-  m_Text: "tkt p\xE9p\xE9 je vais te le chercher ton marteau"
-  m_Nom: Thierry
+  m_Text: "Je suis l\xE0 pour \xE7a grand p\xE8re, savez vous d'o\xF9 ces creatures
+    viennent ?"
+  m_Nom: Michel
   m_SpeakerAvatar: {fileID: 21300000, guid: 61f826147b12dc1418971363544ed127, type: 3}
+  m_nextDialog: {fileID: 11400000, guid: b1d90eedad1223f41a4cd0336bdf0c53, type: 2}

@@ -9,6 +9,8 @@ using UnityEngine.UI;
 		private Text m_Text = null;
 		[SerializeField]
 		private Text m_Nom = null;
+		[SerializeField]
+		private Dialogue m_NexDial = null;
 
 		private void Awake()
 		{
@@ -20,14 +22,21 @@ using UnityEngine.UI;
 			m_CharacterAvatar.sprite = _dial.GetSpeakerAvatar();
 			m_Text.text = _dial.GetText();
 			m_Nom.text = _dial.GetNom();
+			m_NexDial = _dial.GetNextDialog();
 			gameObject.SetActive(true);
+			Invoke("HideDialog", 3f);
 		}
 
 		public void HideDialog()
 		{
-			m_CharacterAvatar.sprite = null;
-			m_Text.text = null;
-			gameObject.SetActive(false);
+			if(m_NexDial != null){
+				DisplayDialog(m_NexDial);
+			}
+			else{
+				m_CharacterAvatar.sprite = null;
+				m_Text.text = null;
+				gameObject.SetActive(false);
+			}
 		}
 
 	}

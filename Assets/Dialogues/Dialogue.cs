@@ -12,7 +12,7 @@
 		private Sprite m_SpeakerAvatar = null;
 
 		[SerializeField]
-		private Dialogue m_nextDialog;
+		private Dialogue m_nextDialog = null;
 
 		public string GetText()
 		{
