@@ -24,9 +24,7 @@ public class character : MonoBehaviour
 
 	private bool m_fini = false;
 
-	float life;
-	public GUIStyle myGUIStyle;
-
+	
 	private void Awake()
 	{
 		m_Animator = GetComponent<Animator>();
@@ -100,7 +98,7 @@ public class character : MonoBehaviour
 					foreach(Collider2D hit in objectsHit)
 					{
 						if(hit != null && hit != Oldhit){
-							Debug.Log(hit.gameObject.GetComponent<Entity>().GetName() + ", pv :" + hit.gameObject.GetComponent<Entity>().GetLife());
+							//Debug.Log(hit.gameObject.GetComponent<Entity>().GetName() + ", pv :" + hit.gameObject.GetComponent<Entity>().GetLife());
 							hit.gameObject.GetComponent<Entity>().TakeDamage(m_degats, transform, false);
 							Oldhit = hit;
 							
@@ -116,14 +114,7 @@ public class character : MonoBehaviour
 				Invoke("GameOver", 0.5f);
 				m_fini = true;
 			}
-		
-		
 		}
-		life = transform.gameObject.GetComponentInParent<Entity>().GetLife();
-		if(life <= 0){
-			life = 0;
-		}
-		
 	}
 
 	private void GameOver()
@@ -131,11 +122,5 @@ public class character : MonoBehaviour
 		m_dialogBox.DisplayDialog(m_gmeOver);
 	}
 
-	private void OnGUI () {
- 
-	//For example you have 100 life’s maximum.
 	
-	GUI.Box(new Rect(10f, 10f, 0.001f * Screen.width * life,  0.1f * Screen.height), "LIFE : " +  life, myGUIStyle);
- 
- }
 }

@@ -6,9 +6,22 @@ public class Entity : MonoBehaviour
     [SerializeField]
 	public string m_name = "name";
 	[SerializeField]
-	public int m_life = 1;
-    private bool m_alive = true;
-
+	public float m_lifeMax = 1f;
+    private bool m_alive; 
+	private float m_life;
+	
+	[SerializeField]
+	GameObject m_canvas = null;
+	RectTransform m_rt = null;
+    float m_originLifeWitdh;
+    private void Awake()
+    {
+        m_life = m_lifeMax;
+        if(m_canvas != null)
+        {
+            SetCanvasSize();
+        }
+    }
 
 	public bool IsDead()
 	{   
@@ -29,9 +42,14 @@ public class Entity : MonoBehaviour
             if(_isPlayer)
             {
                 KnockBackPlayer(_entityPos.position);
+                UpdateLifeBar();
             }else{
                 KnockBack(_entityPos.position);
             }
+        }
+        if(_isPlayer)
+        {
+            UpdateLifeBar();
         }
 	}
 
@@ -57,8 +75,28 @@ public class Entity : MonoBehaviour
     {
         return m_name;
     }
-    public int GetLife()
+    public float GetLife()
     {
         return m_life;
     }
+
+    private void SetCanvasSize()
+    {
+        if(m_canvas != null)
+        {
+            m_rt = m_canvas.GetComponent<RectTransform>();
+            m_originLifeWitdh = m_rt.sizeDelta.x;
+        }
+    }
+
+    private void UpdateLifeBar()
+	{
+        if(m_canvas != null)
+        {
+            if(m_life >= 0){
+                m_rt.sizeDelta = new Vector2 (m_originLifeWitdh * (m_life/m_lifeMax), m_rt.sizeDelta.y);
+            }
+            
+        }
+	}
 }

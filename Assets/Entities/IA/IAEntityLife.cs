@@ -8,7 +8,7 @@ public class IAEntityLife : StateMachineBehaviour
 		{
 			dead = _Animator.gameObject.GetComponentInParent<Entity>().IsDead() ;
 			_Animator.SetBool("kaput", dead);
-			Debug.Log("mort ? " + dead);
+			//Debug.Log("mort ? " + dead);
 			
 		}
 
