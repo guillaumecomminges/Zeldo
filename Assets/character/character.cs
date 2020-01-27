@@ -17,7 +17,7 @@ public class character : MonoBehaviour
     public LayerMask selectObjectsToHit;
 
 	[SerializeField]	
-	Dialogue m_gmeOver;
+	Dialogue m_gmeOver = null;
 
 	[SerializeField]
 	private DialogBox m_dialogBox = null;
@@ -62,34 +62,11 @@ public class character : MonoBehaviour
 			else { m_IsWalking=false; }
 			m_Animator.SetBool("is_walking", m_IsWalking);
 
-			/////////////////////////////Interraction//////////////////////////////
+			/////////////////////////////Combat//////////////////////////////
 
 			if(Input.GetKeyDown(KeyCode.Space)){
 				m_Animator.SetBool("is_attack", true);
-				
-				/// combat directionnel en cône (WIP)
-				/*
-				Vector3 startVec = transform.position;
-		
-				RaycastHit hitInfo;
-				Vector3 rayDirection = Vector3.right;
-				Physics2D.OverlapCircleNonAlloc(transform.position, m_swordRange, objectsHit, selectObjectsToHit);  
-
-				
-				if ((Vector3.Angle(rayDirection, startVec)) < 90 &&
-					Physics.Raycast(startVec, rayDirection, out hitInfo, Mathf.Infinity, selectObjectsToHit))
-				{ 
-					
-					Debug.Log(hitInfo.collider.name);
-					if(hitInfo.collider.gameObject != null)
-					{
-						Debug.Log("je tappe");
-					}
-				}else{
-					Debug.Log("Je tappe pas :(");
-				}*/
-
-				
+								
 				Physics2D.OverlapCircleNonAlloc(transform.position, m_swordRange, objectsHit, selectObjectsToHit);
 
 				if(objectsHit.Length > 0)  

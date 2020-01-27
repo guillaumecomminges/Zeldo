@@ -15,13 +15,11 @@ public class Agress : MonoBehaviour {
     public Collider2D[] objectsHit;
     public LayerMask selectObjectsToHit;
 
-	private bool m_canHit;
 
 	private void Awake()
 	{
 		objectsHit = new Collider2D[maxObjectsHit];
 		selectObjectsToHit = LayerMask.GetMask("Player");
-		m_canHit = true;
 	}
 
 
@@ -34,19 +32,14 @@ public class Agress : MonoBehaviour {
 				Collider2D Oldhit = null;
                 foreach(Collider2D hit in objectsHit)
                 {
-					if(hit != null && hit != Oldhit /*&& m_canHit*/){
+					if(hit != null && hit != Oldhit){
 						//Debug.Log(hit.gameObject.GetComponent<Entity>().GetName() + ", pv :" + hit.gameObject.GetComponent<Entity>().GetLife());
 						hit.gameObject.GetComponent<Entity>().TakeDamage(m_degats, transform, true);
 						objectsHit = new Collider2D[maxObjectsHit];
-						//m_canHit = false;
-						//Invoke("ResetHit", 0.5f);
+
 					}
                 }
             }
 	}
 
-	private void ResetHit(){
-		m_canHit = true;
-	}
-    
 }

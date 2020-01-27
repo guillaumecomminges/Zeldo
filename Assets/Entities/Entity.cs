@@ -7,6 +7,9 @@ public class Entity : MonoBehaviour
 	public string m_name = "name";
 	[SerializeField]
 	public float m_lifeMax = 1f;
+
+    [SerializeField]
+    public float m_KnockForce = 20f;
     private bool m_alive; 
 	private float m_life;
 	
@@ -14,6 +17,8 @@ public class Entity : MonoBehaviour
 	GameObject m_canvas = null;
 	RectTransform m_rt = null;
     float m_originLifeWitdh;
+
+    
     private void Awake()
     {
         m_life = m_lifeMax;
@@ -39,13 +44,7 @@ public class Entity : MonoBehaviour
 		m_life -= _damage;
         if(m_life > 0)
         {
-            if(_isPlayer)
-            {
-                KnockBackPlayer(_entityPos.position);
-                UpdateLifeBar();
-            }else{
-                KnockBack(_entityPos.position);
-            }
+            KnockBack(_entityPos.position);
         }
         if(_isPlayer)
         {
@@ -55,8 +54,9 @@ public class Entity : MonoBehaviour
 
     public void KnockBack(Vector3 _entityPos)
     {
-        Vector3 knockbackPosition = transform.position + (transform.position - _entityPos).normalized ;
-        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.MoveTowards(transform.position, knockbackPosition, Time.deltaTime) / 8; 
+        Vector3 knockbackPosition = (_entityPos - transform.position).normalized * 100;
+        gameObject.GetComponent<Rigidbody2D>().AddForce(-knockbackPosition * m_KnockForce);
+        Debug.Log(transform.position + " " + knockbackPosition);
         Invoke("StopKnock", 0.08f);
     }
 
@@ -64,13 +64,6 @@ public class Entity : MonoBehaviour
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
-
-    public void KnockBackPlayer(Vector3 _entityPos)
-    {
-        Vector3 knockbackPosition = (_entityPos - transform.position).normalized * 100;
-        gameObject.GetComponent<Rigidbody2D>().AddForce(-knockbackPosition * 40);
-    }
-
     public string GetName()
     {
         return m_name;

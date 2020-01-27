@@ -3,7 +3,7 @@
 public class Intro : MonoBehaviour
 {
 	[SerializeField]
-	Dialogue m_intro;
+	Dialogue m_intro = null;
 
 	[SerializeField]
 	private DialogBox m_dialogBox = null;

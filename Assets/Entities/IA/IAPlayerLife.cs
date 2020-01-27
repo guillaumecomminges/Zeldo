@@ -9,7 +9,7 @@ public class IAPlayerLife : StateMachineBehaviour
 			if(!dead){
 				dead = _Animator.gameObject.GetComponentInParent<Entity>().IsDead() ;
 				_Animator.SetBool("kaput", dead);
-				Debug.Log("PV : " + _Animator.gameObject.GetComponentInParent<Entity>().GetLife() + " mort ? " + _Animator.gameObject.GetComponentInParent<Entity>().IsDead() );
+				//Debug.Log("PV : " + _Animator.gameObject.GetComponentInParent<Entity>().GetLife() + " mort ? " + _Animator.gameObject.GetComponentInParent<Entity>().IsDead() );
 			}else{
 				_Animator.SetBool("kaput", !dead);
 			}

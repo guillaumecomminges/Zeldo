@@ -5586,8 +5586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b01c42568b0f054a81cc9d31007e0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderHouseIn: {fileID: 344294769}
-  HouseSpawn: {fileID: 973486896}
+  Spawn: {fileID: 973486896}
   playerPosition: {fileID: 277667238}
 --- !u!61 &344294769
 BoxCollider2D:
@@ -6392,8 +6391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b01c42568b0f054a81cc9d31007e0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderHouseIn: {fileID: 973486895}
-  HouseSpawn: {fileID: 344294770}
+  Spawn: {fileID: 344294770}
   playerPosition: {fileID: 277667238}
 --- !u!1 &991303749
 GameObject:
@@ -28248,8 +28246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b01c42568b0f054a81cc9d31007e0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderHouseIn: {fileID: 1126666188}
-  HouseSpawn: {fileID: 1806465892}
+  Spawn: {fileID: 1806465892}
   playerPosition: {fileID: 277667238}
 --- !u!61 &1126666188
 BoxCollider2D:
@@ -116344,8 +116341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b01c42568b0f054a81cc9d31007e0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderHouseIn: {fileID: 1806465893}
-  HouseSpawn: {fileID: 1126666186}
+  Spawn: {fileID: 1126666186}
   playerPosition: {fileID: 277667238}
 --- !u!4 &1816190416 stripped
 Transform:
@@ -116915,7 +116911,6 @@ GameObject:
   - component: {fileID: 2144019052}
   - component: {fileID: 2144019054}
   - component: {fileID: 2144019053}
-  - component: {fileID: 2144019055}
   m_Layer: 5
   m_Name: FullLife
   m_TagString: Untagged
@@ -116977,18 +116972,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144019051}
   m_CullTransparentMesh: 0
---- !u!114 &2144019055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144019051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9176f5f781f1e204eba7ce86965d06aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3562230873888853724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117329,6 +117312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_lifeMax
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705350998172805409, guid: 18dfcb2c3c897d448873e425d2de57c5,
+        type: 3}
+      propertyPath: m_KnockForce
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5787463501597080424, guid: 18dfcb2c3c897d448873e425d2de57c5,
         type: 3}
