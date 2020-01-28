@@ -46,10 +46,7 @@ public class Entity : MonoBehaviour
         {
             KnockBack(_entityPos.position);
         }
-        if(_isPlayer)
-        {
-            UpdateLifeBar();
-        }
+        UpdateLifeBar();
 	}
 
     public void KnockBack(Vector3 _entityPos)

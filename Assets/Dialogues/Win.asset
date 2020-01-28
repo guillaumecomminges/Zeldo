@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d18cda3d8d391947aa29d183abc8e70, type: 3}
-  m_Name: Michant
+  m_Name: Win
   m_EditorClassIdentifier: 
-  m_Text: "Niahaha Je suis m\xE9chant"
-  m_Nom: Le michant
-  m_SpeakerAvatar: {fileID: 21300000, guid: 38b0c5bd6442fe6419d9a889eca0d1bb, type: 3}
-  m_nextDialog: {fileID: 11400000, guid: 7698709c26972bc44bc6a33d626b5cbc, type: 2}
+  m_Text: "AHA ! le vieil ermite ne devrait plus avoir de probl\xE8mes maintenant"
+  m_Nom: Thierry
+  m_SpeakerAvatar: {fileID: 21300012, guid: 61f826147b12dc1418971363544ed127, type: 3}
+  m_nextDialog: {fileID: 0}
